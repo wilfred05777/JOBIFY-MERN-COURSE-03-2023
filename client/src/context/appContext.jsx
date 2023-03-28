@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React, { useReducer, useContext, useEffect } from 'react'
 
-import axios from 'axios'
 
 import { DISPLAY_ALERT, CLEAR_ALERT } from './actions'
 
