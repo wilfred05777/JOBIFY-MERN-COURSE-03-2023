@@ -12,9 +12,21 @@ export const initialState = {
   alertType: ''
 }
 
+// const AppContext = React.createContext()
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [state, setState] = useState(initialState)
+
+  const displayAlert = () => {
+    dispatch({ type: DISPLAY_ALERT })
+    clearAlert()
+  }
+
+  const clearAlert = () => {
+    setTimeout(() => {
+      dispatch({ type: CLEAR_ALERT })
+    }, 3000)
+  }
 
   return (
     <AppContext.Provider
