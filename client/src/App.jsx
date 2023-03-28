@@ -19,10 +19,11 @@ function App() {
         <Link to='/landing'>Home</Link>
       </nav>
       <Routes>
-        <Route path='/' />
+        <Route path='/' element={<div>Dashboard</div>} />
 
         <Route path='/landing' element={<Landing />} />
         <Route path='/register' element={<Register />} />
+        <Route path='*' element={<div>Error</div>} />
       </Routes>
     </BrowserRouter>
   )
