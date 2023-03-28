@@ -21,7 +21,7 @@ npm run install-dependencies
 npm start
 ```
 
-- visit url http://localhost:3000/
+- visit url http://localhost:3000/ in vite http://localhost:5173/
 
 #### Setup React App
 
