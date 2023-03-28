@@ -7,8 +7,8 @@ import { AppProvider } from './context/appContext'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* https://github.com/john-smilga/mern-course-jobify */}
-    {/* <AppProvider> */}
-    <App />
-    {/* </AppProvider> */}
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>
 )

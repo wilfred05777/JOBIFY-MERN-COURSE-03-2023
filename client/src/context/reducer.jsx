@@ -1,6 +1,6 @@
 import { DISPLAY_ALERT, CLEAR_ALERT } from './actions'
 
-import { intialState } from './appContext'
+import { initialState } from './appContext'
 
 const reducer = (state, action) => {}
 

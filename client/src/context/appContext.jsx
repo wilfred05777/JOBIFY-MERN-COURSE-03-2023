@@ -5,36 +5,31 @@ import axios from 'axios'
 
 import { DISPLAY_ALERT, CLEAR_ALERT } from './actions'
 
-const intialState = {
-  isLoading: true,
-  showAlert: false
+export const initialState = {
+  isLoading: false,
+  showAlert: false,
+  alertText: '',
+  alertType: ''
 }
 
 const AppContext = React.createContext()
-
 const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
-  const displayAlert = () => {
-    dispatch({ type: DISPLAY_ALERT })
-    clearAlert()
-  }
-
-  const clearAlert = () => {
-    setTimeout(() => {
-      dispatch({ type: CLEAR_ALERT })
-    }, 3000)
-  }
+  const [state, setState] = useState(initialState)
 
   return (
-    <AppContext.Provider value={(displayAlert, clearAlert)}>
+    <AppContext.Provider
+      value={{
+        ...state
+      }}
+    >
       {children}
     </AppContext.Provider>
   )
 }
 
-const useAppContext = () => {
+// make sure use
+export const useAppContext = () => {
   return useContext(AppContext)
 }
 
-export { AppProvider, intialState, useAppContext }
+export { AppProvider, initialState, useAppContext }
