@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useReducer, useContext, useEffect } from 'react'
-
+import reducer from './reducer'
 
 import { DISPLAY_ALERT, CLEAR_ALERT } from './actions'
 
@@ -14,7 +14,8 @@ export const initialState = {
 // const AppContext = React.createContext()
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
-  const [state, setState] = useState(initialState)
+  // const [state, setState] = useState(initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   const displayAlert = () => {
     dispatch({ type: DISPLAY_ALERT })
@@ -36,6 +37,20 @@ const AppProvider = ({ children }) => {
       {children}
     </AppContext.Provider>
   )
+}
+
+const handleChange = (e) => {
+  setValues({ ...values, [e.target.name]: e.target.value })
+}
+
+const onSubmit = (e) => {
+  e.preventDefault()
+  const { name, email, password, isMember } = values
+  if (!email || !password || (!isMember && !name)) {
+    displayAlert()
+    return
+  }
+  console.log(values)
 }
 
 // make sure use

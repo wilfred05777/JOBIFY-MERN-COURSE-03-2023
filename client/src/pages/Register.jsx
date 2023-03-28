@@ -1,4 +1,6 @@
+// @ts-nocheck
 import React from 'react'
+import { useAppContext } from '../context/appContext'
 
 import { FormRow, Logo } from '../components'
 
@@ -17,6 +19,7 @@ const initialState = {
 // global state
 
 const Register = () => {
+  const { isLoading, showAlert } = useAppContext()
   const [values, setValues] = useState(initialState)
 
   // global context and useNavigate later
