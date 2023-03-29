@@ -1,51 +1,14 @@
+// @ts-nocheck
 import React, { useState, useReducer, useContext } from 'react'
 
 import reducer from './reducer'
 import { DISPLAY_ALERT } from './actions'
 
-export const initialState = {
+const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: '',
   alertType: ''
-}
-
-// const AppContext = React.createContext()
-const AppContext = React.createContext()
-const AppProvider = ({ children }) => {
-  // const [state, setState] = useState(initialState)
-
-  const [state, dispatch] = useReducer(initialState)
-
-  // const displayAlert = () => {
-  //   dispatch({ type: DISPLAY_ALERT })
-  // clearAlert()
-  // }
-  const displayAlert = () => {
-    dispatch({ type: DISPLAY_ALERT })
-    clearAlert()
-  }
-
-  const clearAlert = () => {
-    setTimeout(() => {
-      dispatch({ type: CLEAR_ALERT })
-    }, 3000)
-  }
-
-  return (
-    <AppContext.Provider
-      value={{
-        ...state,
-        displayAlert
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  )
-}
-
-const handleChange = (e) => {
-  setValues({ ...values, [e.target.name]: e.target.value })
 }
 
 const onSubmit = (e) => {
@@ -58,9 +21,44 @@ const onSubmit = (e) => {
   console.log(values)
 }
 
-// make sure use
-export const useAppContext = () => {
+const AppContext = React.createContext()
+
+const AppProvider = ({ children }) => {
+  // const [state, setState] = useState(initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  // global state and useNavigate
+
+  // const displayAlert() =>{
+  //   dispatch({type:DISPLAY_ALERT})
+  // }
+
+  const displayAlert = () => {
+    dispatch({
+      type: DISPLAY_ALERT
+    })
+    clearAlert()
+  }
+
+  const clearAlert = () => {
+    setTimeout(() => {
+      dispatch({
+        type: CLEAR_ALERT
+      })
+    }, 3000)
+  }
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
+
+  return (
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+  )
+}
+
+const useAppContext = () => {
   return useContext(AppContext)
 }
 
-export { AppProvider }
+export { AppProvider, initialState, useAppContext }

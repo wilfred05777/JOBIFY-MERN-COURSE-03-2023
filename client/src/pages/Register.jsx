@@ -23,7 +23,14 @@ const Register = () => {
   const [values, setValues] = useState(initialState)
 
   // global context and useNavigate later
+
+  // const state = useAppContext()
+  // console.log(state)
   const { isLoading, showAlert, displayAlert } = useAppContext()
+
+  const toggleMember = () => {
+    setValues({ ...values, isMember: !values.isMember })
+  }
 
   const handleChange = (e) => {
     console.log(e.target)
@@ -39,10 +46,6 @@ const Register = () => {
     }
     console.log(values)
     // console.log(e.target)
-  }
-
-  const toggleMember = () => {
-    setValues({ ...values, isMember: !values.isMember })
   }
 
   // useEffect(() => {
@@ -61,6 +64,7 @@ const Register = () => {
         {/* <h3>Register</h3> */}
         {/* <h3>{values.isMember ? 'Login' : 'Register'}</h3> */}
         <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+        {/* {!values.showAlert && <Alert />} */}
         {showAlert && <Alert />}
         {/* name input */}
         {!values.isMember && (

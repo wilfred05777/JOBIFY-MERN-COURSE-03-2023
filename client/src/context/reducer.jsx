@@ -3,6 +3,7 @@ import { DISPLAY_ALERT, CLEAR_ALERT } from './actions'
 import { initialState } from './appContext'
 
 const reducer = (state, action) => {
+  
   if (action.type === DISPLAY_ALERT) {
     return {
       ...state,
