@@ -30,40 +30,71 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target)
+    const { name, email, password, isMember } = values
+
+    if (!email || !password || (!isMember && !name)) {
+      displayAlert()
+      return
+    }
+    console.log(values)
+    // console.log(e.target)
   }
 
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember })
   }
 
+  useEffect(() => {
+    // if (user) {
+    //   setTimeout(() => {
+    //     navigate('/')
+    //   }, 3000)
+    // }
+    // }, [user, navigate])
+  }, [])
+
   return (
     <Wrapper className='full-page'>
-      {/* control h3 */}
+      <form className='form' onSubmit={onSubmit}>
+        <Logo />
+        {/* <h3>Register</h3> */}
+        {/* <h3>{values.isMember ? 'Login' : 'Register'}</h3> */}
+        <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+        {showAlert && <Alert />}
+        {/* name input */}
+        {!values.isMember && (
+          <FormRow
+            type='text'
+            name='name'
+            value={values.name}
+            handleChange={handleChange}
+          />
+        )}
 
-      <h3>{values.isMember ? 'Login' : 'Register'}</h3>
-
-      {/* toggle name */}
-
-      {!values.isMember && (
+        {/* email input */}
         <FormRow
-          type='text'
-          name='name'
-          value={values.name}
+          type='email'
+          name='email'
+          value={values.email}
           handleChange={handleChange}
         />
-      )}
+        {/* password input */}
+        <FormRow
+          type='password'
+          name='password'
+          value={values.password}
+          handleChange={handleChange}
+        />
 
-      {/* right after submit btn */}
-      {/* toggle button */}
+        <button className='btn btn-block'>submit</button>
 
-      <p>
-        {values.isMember ? 'Not a member yet?' : 'Already a member?'}
-
-        <button type='button' onClick={toggleMember} className='member-btn'>
-          {values.isMember ? 'Register' : 'Login'}
-        </button>
-      </p>
+        <p>
+          {values.isMember ? 'Not a member yet?' : 'Already a member?'}
+          <button type='button' onClick={toggleMember} className='member-btn'>
+            {values.isMember ? 'Register' : 'Login'}
+          </button>
+        </p>
+      </form>
     </Wrapper>
     // <Wrapper className='full-page'>
     //   <form className='form' onSubmit={onSubmit}>
