@@ -14,15 +14,16 @@ const initialState = {
   email: '',
   password: '',
   isMember: true
+  // showAlert: false
 }
 // if possible prefer local state
 // global state
 
 const Register = () => {
-  const { isLoading, showAlert } = useAppContext()
   const [values, setValues] = useState(initialState)
 
   // global context and useNavigate later
+  const { isLoading, showAlert, displayAlert } = useAppContext()
 
   const handleChange = (e) => {
     console.log(e.target)
@@ -44,14 +45,14 @@ const Register = () => {
     setValues({ ...values, isMember: !values.isMember })
   }
 
-  useEffect(() => {
-    // if (user) {
-    //   setTimeout(() => {
-    //     navigate('/')
-    //   }, 3000)
-    // }
-    // }, [user, navigate])
-  }, [])
+  // useEffect(() => {
+  //   // if (user) {
+  //   //   setTimeout(() => {
+  //   //     navigate('/')
+  //   //   }, 3000)
+  //   // }
+  //   // }, [user, navigate])
+  // }, [])
 
   return (
     <Wrapper className='full-page'>
@@ -96,31 +97,6 @@ const Register = () => {
         </p>
       </form>
     </Wrapper>
-    // <Wrapper className='full-page'>
-    //   <form className='form' onSubmit={onSubmit}>
-    //     <Logo />
-    //     <h3>Login</h3>
-
-    //     {/* name field */}
-    //     <div className='form-row'>
-    //       <label htmlFor='name' className='form-label'>
-    //         name
-    //       </label>
-
-    //       <input
-    //         type='text'
-    //         value={values.name}
-    //         name='name'
-    //         onChange={handleChange}
-    //         className='form-input'
-    //       />
-    //     </div>
-
-    //     <button type='submit' className='btn btn-block'>
-    //       submit
-    //     </button>
-    //   </form>
-    // </Wrapper>
   )
 }
 
