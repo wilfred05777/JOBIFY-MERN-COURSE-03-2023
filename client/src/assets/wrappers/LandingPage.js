@@ -51,7 +51,6 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 400px;
       column-gap: 3rem;
     }
-    .
     .main-img{
       display: block;
     }
