@@ -15,14 +15,14 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to='/'>Dashboard</Link>
+        {/* <Link to='/'>Dashboard</Link>
         <Link to='/register'>Register</Link>
-        <Link to='/landing'>Home</Link>
+        <Link to='/landing'>Home</Link> */}
       </nav>
 
       <Routes>
         {/* <Route path='/' element={<div>Dashboard</div>} /> */}
-        <Route path='/' element={<Dashboard />} />
+        <Route path='/' element={<Landing />} />
 
         <Route path='/landing' element={<Landing />} />
         <Route path='/register' element={<Register />} />
