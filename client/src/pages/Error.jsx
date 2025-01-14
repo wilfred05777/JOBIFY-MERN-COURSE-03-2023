@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Error = () => {
   return (
-    <Wrapper>
+    <Wrapper className='full-page'>
       <div>
         <img src={img} alt='not-found' />
         <h3>Ohh! page not found</h3>

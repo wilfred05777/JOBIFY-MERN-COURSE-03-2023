@@ -8,6 +8,7 @@ import { Landing } from './pages'
 import React from 'react'
 import Register from './pages/Register'
 import Dashboard from './pages/dashboard/Dashboard'
+import Error from './pages/Error'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +27,7 @@ function App() {
 
         <Route path='/landing' element={<Landing />} />
         <Route path='/register' element={<Register />} />
-        <Route path='*' element={<div>Error</div>} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>
   )
