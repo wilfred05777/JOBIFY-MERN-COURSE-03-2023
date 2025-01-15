@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import './App.css'
-import { BrowserRouter, Route, Routes, Link, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Link, createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import {
   HomeLayout,
@@ -23,33 +23,46 @@ import React from 'react'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomeLayout />
+    element: <HomeLayout />,
+    errorElement: <Error />,
+
+    children: [
+      {
+        index: true,
+        element: <Landing/>
+      }
+    ]
   }
 ])
 
-function App() {
-
-  const [count, setCount] = useState(0)
-
-  return (
-    <BrowserRouter>
-      <nav>
-        {/* <Link to='/'>Dashboard</Link>
-        <Link to='/register'>Register</Link>
-        <Link to='/landing'>Home</Link> */}
-      </nav>
-
-      <Routes>
-        {/* <Route path='/' element={<div>Dashboard</div>} /> */}
-        <Route path='/' element={<Landing />} />
-        <Route path="/login" element={<Login/>}/>
-
-        <Route path='/landing' element={<Landing />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-    </BrowserRouter>
-  )
+const App = () => {
+  return <RouterProvider router={router} />;
 }
+
+
+// function App() {
+
+//   const [count, setCount] = useState(0)
+
+//   return (
+//     <BrowserRouter>
+//       <nav>
+//         {/* <Link to='/'>Dashboard</Link>
+//         <Link to='/register'>Register</Link>
+//         <Link to='/landing'>Home</Link> */}
+//       </nav>
+
+//       <Routes>
+//         {/* <Route path='/' element={<div>Dashboard</div>} /> */}
+//         <Route path='/' element={<Landing />} />
+//         <Route path="/login" element={<Login/>}/>
+
+//         <Route path='/landing' element={<Landing />} />
+//         <Route path='/register' element={<Register />} />
+//         <Route path='*' element={<Error />} />
+//       </Routes>
+//     </BrowserRouter>
+//   )
+// }
 
 export default App
