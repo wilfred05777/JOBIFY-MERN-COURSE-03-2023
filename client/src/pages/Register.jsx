@@ -6,6 +6,7 @@ import { FormRow, Logo } from '../components'
 
 import Wrapper from '../assets/wrappers/RegisterPage'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // global context and useNavigate later
 
@@ -59,86 +60,67 @@ const Register = () => {
 
   return (
     <Wrapper className='full-page'>
-      <form className='form' onSubmit={onSubmit}>
-        <Logo />
+
+      <form className='form'>
+        <Logo/>
+        <h4>Register</h4>
+        <FormRow type='text' name="name" defaultValue="John" />
+        <FormRow type='text' name="lastName" labelText="last name" defaultValue="Doe" />
+        <FormRow type='text' name="location" defaultValue="earth" />
+        <FormRow type='email' name="email" defaultValue="john@gmail.com" />
+        <FormRow type='password' name="password" defaultValue="*******" />
+        
+        <p>
+          Already a member? 
+          <Link to='/login' className='member-btn'>Login</Link>
+        </p> 
+      </form>
+
+      {/* <form className='form' onSubmit={onSubmit}> */}
+        {/* <Logo /> */}
+
         {/* <h3>Register</h3> */}
         {/* <h3>{values.isMember ? 'Login' : 'Register'}</h3> */}
-        <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+        {/* <h3>{values.isMember ? 'Login' : 'Register'}</h3> */}
         {/* {!values.showAlert && <Alert />} */}
-        {showAlert && <Alert />}
+        {/* {showAlert && <Alert />} */}
 
         {/* name input */}
-        {!values.isMember && (
-          <FormRow
+        {/* {!values.isMember && ( */}
+          {/* <FormRow
             type='text'
             name='name'
             value={values.name}
             handleChange={handleChange}
-          />,
-
-        //   <FormRow
-        //     type='text'
-        //     name='lastname'
-        //     value={values.lastname}
-        //     handleChange={handleChange}
-        //     defaultValue='Smith'
-        //   />,
-          
-        //   <FormRow
-        //     type='text'
-        //     name='location'
-        //     value={values.location}
-        //     handleChange={handleChange}
-        //   />,
-
-        //   <FormRow
-        //   type='text'
-        //     name='lastname'
-        //     value={values.lastname}
-        //     handleChange={handleChange}
-        //   />,
-
-        //   <FormRow
-        //   type='email'
-        //   name='email'
-        //   value={values.email}
-        //   handleChange={handleChange}
-        //   />,
-          
-        //   <FormRow
-        //   type='password'
-        //   name='password'
-        //   value={values.password}
-        //   handleChange={handleChange}
-        // />
-        )}
+          />, */}
+        {/* )} */}
 
         
 
         {/* email input */}
-        <FormRow
+        {/* <FormRow
           type='email'
           name='email'
           value={values.email}
           handleChange={handleChange}
-        />
+        /> */}
         {/* password input */}
-        <FormRow
+        {/* <FormRow
           type='password'
           name='password'
           value={values.password}
           handleChange={handleChange}
-        />
+        /> */}
 
-        <button className='btn btn-block'>submit</button>
+        {/* <button className='btn btn-block'>submit</button> */}
 
-        <p>
+        {/* <p>
           {values.isMember ? 'Not a member yet?' : 'Already a member?'}
           <button type='button' onClick={toggleMember} className='member-btn'>
             {values.isMember ? 'Register' : 'Login'}
           </button>
-        </p>
-      </form>
+        </p> */}
+      {/* </form> */}
     </Wrapper>
   )
 }
