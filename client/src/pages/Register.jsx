@@ -66,6 +66,7 @@ const Register = () => {
         <h3>{values.isMember ? 'Login' : 'Register'}</h3>
         {/* {!values.showAlert && <Alert />} */}
         {showAlert && <Alert />}
+
         {/* name input */}
         {!values.isMember && (
           <FormRow
@@ -73,8 +74,46 @@ const Register = () => {
             name='name'
             value={values.name}
             handleChange={handleChange}
-          />
+          />,
+
+        //   <FormRow
+        //     type='text'
+        //     name='lastname'
+        //     value={values.lastname}
+        //     handleChange={handleChange}
+        //     defaultValue='Smith'
+        //   />,
+          
+        //   <FormRow
+        //     type='text'
+        //     name='location'
+        //     value={values.location}
+        //     handleChange={handleChange}
+        //   />,
+
+        //   <FormRow
+        //   type='text'
+        //     name='lastname'
+        //     value={values.lastname}
+        //     handleChange={handleChange}
+        //   />,
+
+        //   <FormRow
+        //   type='email'
+        //   name='email'
+        //   value={values.email}
+        //   handleChange={handleChange}
+        //   />,
+          
+        //   <FormRow
+        //   type='password'
+        //   name='password'
+        //   value={values.password}
+        //   handleChange={handleChange}
+        // />
         )}
+
+        
 
         {/* email input */}
         <FormRow
