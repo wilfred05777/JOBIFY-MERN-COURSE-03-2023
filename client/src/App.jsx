@@ -1,17 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+// updated resource: https://github.com/john-smilga/mern-jobify-v2
 
-import { Landing } from './pages'
+import { useState } from 'react'
+import './App.css'
+import { BrowserRouter, Route, Routes, Link, createBrowserRouter } from 'react-router-dom'
+
+import {
+  HomeLayout,
+  Landing,
+  Register,
+  Login,
+  DashboardLayout,
+  Error,
+  AddJob,
+  Stats,
+  AllJobs,
+  Profile,
+  Admin,
+  EditJob,
+} from './pages'
 import React from 'react'
-import Register from './pages/Register'
-import Dashboard from './pages/dashboard/Dashboard'
-import Error from './pages/Error'
-import Login from './pages/Login'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />
+  }
+])
 
 function App() {
+
   const [count, setCount] = useState(0)
 
   return (
