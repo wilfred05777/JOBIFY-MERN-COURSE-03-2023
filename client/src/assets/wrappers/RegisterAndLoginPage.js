@@ -32,5 +32,8 @@ const Wrapper = styled.section`
         letter-spacing: var(--letter-spacing);
         margin-left: .25rem;
     }
+    .form-label{
+        text-align: left;
+    }
 `;
 export default Wrapper;

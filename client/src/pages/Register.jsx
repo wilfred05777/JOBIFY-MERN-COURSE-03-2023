@@ -5,7 +5,7 @@ import { useAppContext } from '../context/appContext'
 
 import { FormRow, Logo } from '../components'
 import { Link } from 'react-router-dom'
-import Wrapper from '../assets/wrappers/RegisterPage'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
 
 // global context and useNavigate later
 
