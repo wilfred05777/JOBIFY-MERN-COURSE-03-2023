@@ -1,12 +1,11 @@
 // @ts-nocheck
 import React from 'react'
+import { useState } from 'react'
 import { useAppContext } from '../context/appContext'
 
 import { FormRow, Logo } from '../components'
-
-import Wrapper from '../assets/wrappers/RegisterPage'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Wrapper from '../assets/wrappers/RegisterPage'
 
 // global context and useNavigate later
 
@@ -72,7 +71,7 @@ const Register = () => {
         
         <p>
           Already a member? 
-          <Link to='/login' className='member-btn'>Login</Link>
+          <Link to='/login' className='member-btn'> Login</Link>
         </p> 
       </form>
 

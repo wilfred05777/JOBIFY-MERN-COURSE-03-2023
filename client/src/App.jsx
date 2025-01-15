@@ -9,6 +9,7 @@ import React from 'react'
 import Register from './pages/Register'
 import Dashboard from './pages/dashboard/Dashboard'
 import Error from './pages/Error'
+import Login from './pages/Login'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         {/* <Route path='/' element={<div>Dashboard</div>} /> */}
         <Route path='/' element={<Landing />} />
+        <Route path="/login" element={<Login/>}/>
 
         <Route path='/landing' element={<Landing />} />
         <Route path='/register' element={<Register />} />
