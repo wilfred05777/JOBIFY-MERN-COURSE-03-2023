@@ -1,5 +1,5 @@
 // updated resource: https://github.com/john-smilga/mern-jobify-v2
-
+import React from 'react'
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes, Link, createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -18,7 +18,7 @@ import {
   Admin,
   EditJob,
 } from './pages'
-import React from 'react'
+
 
 const router = createBrowserRouter([
   {
