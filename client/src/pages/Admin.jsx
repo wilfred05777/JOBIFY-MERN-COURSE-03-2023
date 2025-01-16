@@ -1,8 +1,9 @@
 import React from 'react'
+import Wrapper from '../assets/wrappers/StatsContainer'
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <Wrapper>Admin</Wrapper>
   )
 }
 
