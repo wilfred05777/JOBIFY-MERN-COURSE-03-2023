@@ -1,10 +1,12 @@
-import React from 'react'
-import Wrapper from '../assets/wrappers/StatsContainer'
+import React from "react";
+import Wrapper from "../assets/wrappers/StatsContainer";
 
 const Admin = () => {
-  return (
-    <Wrapper>Admin</Wrapper>
-  )
-}
+   return (
+      <Wrapper>
+         <h2>Admin Page</h2>
+      </Wrapper>
+   );
+};
 
-export default Admin
+export default Admin;

@@ -1,12 +1,12 @@
-import React from 'react'
-import Wrapper from '../assets/wrappers/SmallSidebar.js'
+import React from "react";
+import Wrapper from "../assets/wrappers/SmallSidebar.js";
+import { useDashboardContext } from "../pages/DashboardLayout.jsx";
 
 const SmallSidebar = () => {
-  return (
-      <Wrapper>
-          SmallSidebar
-      </Wrapper>
-  )
-}
+   const data = useDashboardContext();
+   console.log(data);
 
-export default SmallSidebar
+   return <Wrapper>SmallSidebar</Wrapper>;
+};
+
+export default SmallSidebar;
