@@ -42,6 +42,7 @@ const SmallSidebar = () => {
                            key={text}
                            className='nav-link'
                            onClick={toggleSidebar} // navigate to each assign path from the links
+                           end // the 'end' prop purpose is that the first link will not include to be active/highlight every time switching other links
                         >
                            <span className='icon'>{icon}</span>
                            {text}
