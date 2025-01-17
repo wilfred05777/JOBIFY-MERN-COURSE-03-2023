@@ -34,12 +34,4 @@ const links = [
    },
 ];
 
-// const links = () => {
-//    return (
-//       <div>
-//          <h1>Utils links</h1>
-//       </div>
-//    );
-// };
-
 export default links;
