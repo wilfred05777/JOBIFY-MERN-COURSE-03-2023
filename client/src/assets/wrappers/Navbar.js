@@ -16,8 +16,8 @@ const Wrapper = styled.nav`
    .logo {
       display: flex;
       align-items: center;
-      width: 100%;
       /* width: 100px; */
+      width: 100%;
    }
    .toggle-btn {
       background: transparent;
@@ -30,7 +30,9 @@ const Wrapper = styled.nav`
    }
    background: var(--white);
    .btn-container {
-      position: relative;
+      /* position: relative; */
+      display: flex;
+      align-items: center;
    }
    .btn {
       display: flex;
