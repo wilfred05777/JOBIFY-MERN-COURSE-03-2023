@@ -33,7 +33,7 @@ const SmallSidebar = () => {
           <header>
             <Logo />
           </header>
-          <NavLinks />
+          {/* <NavLinks /> */}
           <div className="nav-links">
             {/* below links from utils looping each content */}
             {links.map((link) => {
