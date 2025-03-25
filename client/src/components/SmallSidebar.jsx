@@ -33,6 +33,7 @@ const SmallSidebar = () => {
           <header>
             <Logo />
           </header>
+
           {/* <NavLinks /> */}
           <div className="nav-links">
             {/* below links from utils looping each content */}

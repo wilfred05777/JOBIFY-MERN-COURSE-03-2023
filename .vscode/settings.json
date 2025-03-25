@@ -1,8 +1,12 @@
 {
-   "editor.defaultFormatter": "esbenp.prettier-vscode",
-   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
 
-   "singleQuote": true,
-   "tabWidth": 2,
-   "trailingComma": "none"
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
