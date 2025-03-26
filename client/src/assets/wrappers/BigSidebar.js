@@ -1,5 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
+// BigSidebar
+// Main sidebar component for the dashboard
 const Wrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
@@ -62,5 +64,5 @@ const Wrapper = styled.aside`
       color: var(--primary-500);
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;
